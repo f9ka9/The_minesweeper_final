@@ -141,6 +141,7 @@ void MainWindow::updateCell(int r, int c) {
         }
     } else {
         text.set_label(cell.isFlagged ? "🚩" : "");
+        text.set_color(Color::red);
     }
 }
 
@@ -150,6 +151,8 @@ void MainWindow::clickCellAtIndex(int r, int c, bool rightClick) {
     if (!board.inBounds(r,c)) return;
 
     Cell& cell = board.grid[r][c];
+    
+    if (rightClick && firstClick) return;
 
     if (rightClick) {
         if (!cell.isRevealed) {
@@ -253,7 +256,7 @@ void MainWindow::onTimer() {
     }
 }
 
-void MainWindow::timerCallback(void data) {
+void MainWindow::timerCallback(void* data) {
     MainWindow* window = static_cast<MainWindow*>(data);
     if (window && window->timerActive && !window->gameOver) {
         window->onTimer();
@@ -289,6 +292,7 @@ void MainWindow::cbMenu(Address, Address pw) {
     if (btn.on_click) btn.on_click();
 }
 
+//Обработка событий окна 
 int MainWindow::handle(int event) {
     switch(event) {
         case FltkInterface::PUSH: {
@@ -316,6 +320,7 @@ string MainWindow::formatTime(int seconds) const {
     return ss.str();
 }
 
+//Обновление статусных полей 
 void MainWindow::updateStatus() {
     // Время
     if (countdownMode) {

@@ -153,7 +153,6 @@ void MenuWindow::onExpert() {
 
 
 //Выбор режима
-
 void MenuWindow::onNormalMode() {
     settings.countdownMode = false;
     updateModeButtons(&normalModeBtn);
