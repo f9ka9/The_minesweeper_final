@@ -26,28 +26,6 @@ void Board::placeMines(int safeRow, int safeCol) {
     }
 }
 
-/*
-void Board::placeMines(int safeRow, int safeCol)
-{
-    int placed = 0;
-
-    while (placed < mines)
-    {
-        int r = rand() % rows;
-        int c = rand() % cols;
-
-        if (r == safeRow && c == safeCol)
-            continue;
-
-        if (grid[r][c].isMine)
-            continue;
-
-        grid[r][c].isMine = true;
-        placed++;
-    }
-}
-*/
-
 //Рекурсивно открывает пустые клетки
 void Board::floodFill(int r, int c) {
     static int dr[8] = {-1,-1,-1,0,0,1,1,1};

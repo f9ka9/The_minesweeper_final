@@ -2,6 +2,7 @@
 #include "The_minesweeper_heder/MainWindow.h"
 #include <iostream>
 #include <memory>
+
 using namespace std;
 
 int main() {

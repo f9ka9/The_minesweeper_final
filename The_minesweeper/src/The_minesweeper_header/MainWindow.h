@@ -22,9 +22,9 @@ private:
     static constexpr int MARGIN_Y = 120;    
     
     // Игровые параметры
-    int rows, cols, mines;
-    bool countdownMode;
-    int initialTime; // начальное время для обратного отсчета
+    int rows{0}, cols{0}, mines{0};
+    bool countdownMode{false};
+    int initialTime{0}; // начальное время для обратного отсчета
     Board board;
     
     // Состояние игры
@@ -41,9 +41,9 @@ private:
     MyButton newGameButton;
     MyButton menuButton; 
     
-    Text* timeText;
-    Text* mineText;
-    Text* statusText;
+    Text* timeText{nullptr};
+    Text* mineText{nullptr};
+    Text* statusText{nullptr};
     
     Vector_ref<Rectangle> cellRects;
     Vector_ref<Text> cellTexts;

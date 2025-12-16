@@ -22,7 +22,7 @@ public:
     static int event_x() { return Fl::event_x(); }
     static int event_y() { return Fl::event_y(); }
     static int event_button() { return Fl::event_button(); }
-    
+
     static const int LEFT_MOUSE = FL_LEFT_MOUSE;
     static const int RIGHT_MOUSE = FL_RIGHT_MOUSE;
     static const int PUSH = FL_PUSH;
